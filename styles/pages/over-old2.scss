@@ -1,0 +1,55 @@
+.over {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.over__container {
+  @extend %main-container-row;
+  flex-wrap: nowrap;
+}
+
+.over__first,
+.over__second {
+  height: 50vw;
+  width: 100%;
+}
+
+///////////////////
+// ARROWS ////////
+/////////////////
+
+.over__arrow {
+  @extend %container-arrow;
+}
+
+.over__arrow__first {
+  color: $color-mediumred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+.over__arrow__second {
+  color: $color-darkestred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+///////////////////
+// SQUARES ///////
+/////////////////
+
+.over__square {
+  @extend %container-square;
+}
+
+.over__highlight {
+  background-color: $color-darkred;
+}
+
+.over__text {
+  background-color: $color-mediumred;
+  > p {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,22 @@
+.menu__wrapper {
+  @extend %flex-center;
+  position: absolute;
+  right: 8vw;
+  top: 1rem;
+}
+
+.burger__wrapper {
+  @extend %flex-vertical;
+  @extend %flex-center;
+  .burger__line {
+    width: 3rem;
+    height: 0.5rem;
+    background-color: $color-black;
+    margin: 0.4rem;
+  }
+}
+
+.index__wrapper {
+  @extend %text-buttons;
+  margin-left: 1rem;
+}

@@ -1,0 +1,22 @@
+extends ../base.pug
+
+block variables
+  - var template = 'contact'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .contact.contact__wrapper
+    include ../partials/navigation
+    .contact__container
+      .contact__left  
+        .contact__arrow__container
+          .contact__arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+        .contact__pixels
+      .contact__right
+        .contact__info__container 
+          a(href=contact.data.email_url)=contact.data.email
+        .contact__blank
+    include ../partials/footer

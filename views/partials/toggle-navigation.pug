@@ -1,0 +1,11 @@
+nav.header__toggle__navigation
+
+  .burger 
+    span
+    span
+    span
+
+  ul.toggle__nav
+    each item in navigation.data.nav_bar 
+      li.toggle__nav__item
+        a.toggle__nav__item__link(href=item.link_url)=item.link_name

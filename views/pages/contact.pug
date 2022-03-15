@@ -1,0 +1,34 @@
+extends ../base.pug
+
+block variables
+  - var template = 'contact'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .contact.contact__wrapper
+    include ../partials/navigation
+    .contact__container 
+      .contact__left
+        .contact__arrow
+          .contact__arrow__online.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+        .contact__arrow
+          .contact__arrow__echt.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow') 
+
+      .contact__right  
+        .contact__square
+          .contact__subtitle(data-animation='reveal-secondary')
+            h2='Email'
+          .contact__text.text
+            a.external__link(href='mailto:hoi@taalmaatjesnederlands.nl' target='_blank')=contact.data.email
+        .contact__square
+          .contact__subtitle(data-animation='reveal-secondary')
+            h2='Socials'
+          each item in contact.data.socials
+            .contact__text.text
+              a.external__link(href=`${item.url}` target='_blank')=item.name
+
+    include ../partials/footer

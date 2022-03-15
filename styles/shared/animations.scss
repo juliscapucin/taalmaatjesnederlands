@@ -1,0 +1,11 @@
+@keyframes reveal-image {
+  from {
+    width: 0%;
+    transform: scale(1.2);
+  }
+
+  to {
+    width: 100%;
+    transform: scale(1);
+  }
+}

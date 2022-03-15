@@ -1,0 +1,7 @@
+%mask {
+  clip-path: circle(50px at 1% 1%);
+}
+
+%mask-bg {
+  clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+}

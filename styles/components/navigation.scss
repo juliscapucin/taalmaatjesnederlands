@@ -1,0 +1,162 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  // z-index: z("navigation");
+  @include media("<phone") {
+    height: 7rem;
+  }
+}
+
+.logo {
+  @extend %flex-center;
+  @extend %flex-vertical;
+  margin-left: 2rem;
+}
+
+.logo__taalmaatjes,
+.logo__nederlands {
+  height: 2.7rem;
+  > svg {
+    transform: scale(0.9);
+  }
+}
+
+.navigation__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 1;
+  transition: 0.5s;
+  padding: 2vw;
+  @include media("<phone") {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.navigation__item {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 5rem;
+}
+
+.navigation__item__link {
+  @extend %text-menu;
+  transition: transform 0.2s ease;
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-0.4rem);
+    color: $color-lightred;
+  }
+}
+
+//////////////
+/// BURGER ///
+//////////////
+
+.header__toggle__navigation {
+  position: relative;
+}
+
+.burger {
+  position: fixed;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  pointer-events: none;
+  top: 5vw;
+  right: 5vw;
+  height: 2.5rem;
+  width: 2.5rem;
+  z-index: 100;
+  transition: 0.5s;
+
+  @include media("<phone") {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: $color-black;
+  }
+
+  &.active {
+    position: fixed;
+    opacity: 1;
+    transform: rotate(-90deg);
+    pointer-events: auto;
+    transition: 0.5s;
+
+    span:nth-child(1) {
+      position: fixed;
+      background-color: $color-white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      position: fixed;
+      background-color: $color-white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+///////////////////
+/// TOGGLE NAV ///
+//////////////////
+
+.toggle__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 40vw;
+  pointer-events: none;
+  transform: translateX(-100%);
+  background-color: $color-taupe;
+  z-index: 90;
+  transition: 0.8s;
+
+  &.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+.toggle__nav__item {
+  @extend %text-menu-mobile;
+  color: $color-white;
+  margin-top: 10vw;
+  opacity: 0;
+  left: -10%;
+  z-index: 99;
+  transition: 2s;
+
+  &.active {
+    opacity: 1;
+    left: 0%;
+    pointer-events: auto;
+  }
+}
+
+#breadcrumb {
+  color: $color-lightred;
+}

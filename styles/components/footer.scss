@@ -1,0 +1,47 @@
+.footer {
+  width: 100%;
+  min-height: 15rem;
+  padding: 3vw 1vw 1vw 1vw;
+}
+
+.footer__wrapper {
+  @extend %text-footer;
+  color: $color-black;
+  display: flex;
+  justify-content: space-between;
+
+  @include media("<phone") {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+}
+
+.footer__copy,
+.footer__socials__title {
+  opacity: 0.6;
+}
+
+.footer__socials {
+  display: flex;
+}
+
+.footer__socials__title {
+  margin-right: 2rem;
+}
+
+.footer__socials__menu {
+  @extend %flex-horizontal;
+}
+
+.footer__socials__menu li {
+  margin-left: 2vw;
+}
+
+.footer__socials__link,
+.footer__credits {
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}

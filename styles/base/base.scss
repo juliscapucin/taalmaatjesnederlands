@@ -1,0 +1,96 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  @extend %cover-page;
+  background: $color-lightgrey;
+  color: $color-black;
+  // font-size: calc(100vw / 1920 * 10);
+  font-size: 62.5%;
+  line-height: 1;
+  position: fixed;
+  overflow: hidden;
+
+  @include media("<phone") {
+    // font-size: calc(100vw / 750 * 10);
+    position: relative;
+    overflow-x: hidden;
+    // overflow-y: auto;
+    // height: auto;
+  }
+}
+
+body {
+  @extend %cover-page;
+  @extend %text-block;
+  font-family: $font-primary;
+  font-weight: 100;
+  position: fixed;
+  @include media("<phone") {
+    position: relative;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: $font-primary;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+img {
+  // opacity: 0;
+  transition: opacity 0.4s ease;
+  vertical-align: middle;
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+strong {
+  font-weight: 400;
+}
+
+// .content {
+//   @extend %cover;
+// }
+
+// Set initial positions for all animations
+
+img,
+.logo__top,
+.logo__bottom {
+  opacity: 0;
+}
+
+.arrow {
+  opacity: 0;
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+// Global styles
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,26 @@
+$breakpoints: (
+  "phone": 768px,
+  "tablet": 1024px,
+  "desktop": 1920px,
+) !default;
+
+@import "../../node_modules/include-media/dist/_include-media.scss";
+
+%left-column {
+  @include media("<tablet") {
+    display: none;
+  }
+}
+
+.phone {
+  display: block;
+  @include media("<tablet") {
+    display: none;
+  }
+}
+.desktop {
+  display: block;
+  @include media("<tablet") {
+    display: none;
+  }
+}

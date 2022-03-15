@@ -1,0 +1,78 @@
+.over {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.over__container {
+  @extend %main-container-row;
+}
+
+.over__left,
+.over__right {
+  width: 50vw;
+  height: 100%;
+  @include media("<phone") {
+    width: 100vw;
+  }
+}
+
+.over__left {
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+.over__right {
+  z-index: -1;
+}
+
+.over__first,
+.over__second {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 50vw;
+}
+
+.over__square {
+  @extend %container-square;
+  opacity: 0;
+
+  // Highlight
+  &:nth-child(1) {
+    background-color: $color-darkred;
+  }
+
+  // Text
+  &:nth-child(2) {
+    background-color: $color-mediumred;
+  }
+}
+
+.over__image__container {
+  width: 50vw;
+  height: 50vw;
+  overflow: hidden;
+  margin-right: auto;
+
+  @include media("<phone") {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+.over__image {
+  @extend %cover;
+  object-fit: cover;
+}
+
+.over__arrow {
+  @extend %container-arrow;
+}
+
+.over__arrow__svg {
+  background-color: $color-taupe;
+  color: $color-mediumred;
+  fill: currentColor;
+}

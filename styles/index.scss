@@ -1,0 +1,29 @@
+@import "./base/reset";
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/responsive";
+
+@import "./base/base";
+
+@import "./components/navigation";
+@import "./components/burger";
+@import "./components/preloader";
+@import "./components/footer";
+
+@import "./layout/containers";
+@import "./layout/outlines";
+@import "./layout/spacers";
+
+@import "./shared/animations";
+@import "./shared/text";
+@import "./shared/buttons";
+@import "./shared/mask";
+@import "./shared/pages";
+
+@import "./pages/over";
+@import "./pages/evenementen";
+@import "./pages/contact";
+@import "./pages/home";
+@import "./pages/links";

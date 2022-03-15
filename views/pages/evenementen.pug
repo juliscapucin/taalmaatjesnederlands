@@ -1,0 +1,33 @@
+extends ../base.pug
+
+block variables
+  - var template = 'evenementen'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .evenementen.evenementen__wrapper
+    include ../partials/navigation
+    .evenementen__container 
+
+      .evenementen__left
+        .evenementen__arrow
+          .evenementen__arrow__online(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+        .evenementen__arrow
+          .evenementen__arrow__echt(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow') 
+        .evenementen__arrow
+          .evenementen__arrow__boekenclub(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+
+      .evenementen__right 
+        each item in evenementen.data.items 
+          .evenementen__square
+            .evenementen__subtitle(data-animation='reveal-secondary')
+              h2=item.title
+            .evenementen__text.text
+              p!=PrismicDOM.asText(item.text)
+
+    include ../partials/footer

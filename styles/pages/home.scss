@@ -1,0 +1,250 @@
+.home {
+  @extend %page;
+  // @extend %mask;
+  @extend %flex-center;
+  @extend %flex-vertical;
+  position: relative;
+  z-index: z("content");
+}
+
+.home__header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.home__text__highlight {
+  @extend %text-highlight;
+  margin: 3rem 0 0 3rem;
+  width: 28%;
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+.home__logo {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  min-height: 80rem;
+  background-color: $color-lightgrey;
+  @include media("<phone") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100vh;
+  }
+}
+
+.home__text__highlight__mobile {
+  display: none;
+  width: 90%;
+  margin: 0 0 45vw 5vw;
+  @include media("<phone") {
+    display: block;
+  }
+}
+
+.home__big__logo {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin-bottom: clamp(15rem, 25vw, 25rem);
+  // overflow: hidden;
+  transition: 0.5s;
+
+  @include media("<phone") {
+    margin-bottom: clamp(15rem, 20vw, 20rem);
+  }
+}
+
+// .home__big__logo__taalmaatjes,
+// .home__big__logo__nederlands {
+//   min-height: 13vw;
+//   width: 100vw;
+//   overflow: hidden;
+// }
+
+.home__taalmaatjes,
+.home__nederlands {
+  @extend %flex-center;
+  height: 12vw;
+  width: 100vw;
+
+  > svg {
+    width: 90vw;
+  }
+}
+
+.home__evenementen,
+.home__over,
+.home__maatje,
+.home__links {
+  position: relative;
+  width: 100vw;
+}
+
+.home__evenementen {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  height: 50vw;
+  @include media("<phone") {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vw;
+  }
+}
+
+.home__evenementen__title {
+  width: 75vw;
+  margin: 0 2.5vw 5vw 5vw;
+  > svg {
+    width: 67.5vw;
+  }
+
+  @include media("<phone") {
+    height: 10rem;
+    margin: 0 0 2rem 0;
+    > svg {
+      width: 70vw;
+      transform: translateX(4%);
+    }
+  }
+}
+
+.home__evenementen__text {
+  @extend %text-highlight;
+  width: 25vw;
+  margin: 0 5vw 5vw 2.5vw;
+  color: $color-white;
+  @include media("<phone") {
+    width: 50vw;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.home__evenementen__bg,
+.home__over__bg,
+.home__maatje__bg,
+.home__links__bg {
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-100%);
+  width: 100vw;
+  height: 50vw;
+  z-index: -1;
+  @include media("<phone") {
+    height: 100vw;
+  }
+}
+
+.home__evenementen__bg,
+.home__links__bg {
+  background-color: $color-darkred;
+}
+
+.home__over__bg {
+  background-color: $color-taupe;
+}
+
+.home__maatje__bg {
+  background-color: $color-mediumred;
+}
+
+.home__over,
+.home__maatje,
+.home__links {
+  @extend %flex-center;
+}
+
+// Texts //
+
+.home__over__square__left,
+.home__maatje__square__right,
+.home__links__square__left {
+  @extend %flex-center;
+  @extend %flex-vertical;
+  height: 50vw;
+  width: 50vw;
+  @include media("<phone") {
+    height: 100vw;
+    width: 100vw;
+    justify-content: flex-start;
+  }
+}
+
+// Arrows //
+
+.home__over__square__right {
+  @extend %container-arrow;
+  background-color: $color-darkestred;
+  color: $color-taupe;
+  fill: currentColor;
+}
+
+.home__maatje__square__left {
+  @extend %container-arrow;
+  background-color: $color-mediumred;
+  color: $color-darkred;
+  fill: currentColor;
+}
+
+.home__links__square__right {
+  @extend %container-arrow;
+  background-color: $color-taupe;
+  color: $color-darkred;
+  fill: currentColor;
+}
+
+.home__over__title,
+.home__maatje__title,
+.home__links__title {
+  height: 35%;
+  margin-bottom: 3rem;
+  // background-color: pink;
+  justify-content: flex-end;
+  @include media("<phone") {
+    height: 50%;
+  }
+
+  > svg {
+    transform: scale(0.6);
+    transition: 0.5s;
+    @include media("<tablet") {
+      transform: scale(0.35);
+    }
+
+    @include media("<phone") {
+      transform: scale(0.22);
+    }
+  }
+}
+.home__over__text,
+.home__maatje__text,
+.home__links__text {
+  @extend %text-highlight;
+  margin-top: 1.5vw;
+  width: 45%;
+  min-width: 27rem;
+  max-width: 35rem;
+  text-align: center;
+  color: $color-white;
+  @include media("<phone") {
+    width: 50%;
+  }
+}

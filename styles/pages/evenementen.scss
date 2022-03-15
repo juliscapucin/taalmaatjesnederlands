@@ -1,0 +1,80 @@
+.evenementen {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.evenementen__container {
+  @extend %main-container-row;
+  flex-wrap: nowrap;
+}
+
+.evenementen__left,
+.evenementen__right {
+  width: 50vw;
+  height: 100%;
+  position: relative;
+  @include media("<phone") {
+    width: 100vw;
+  }
+}
+
+.evenementen__left {
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+.evenementen__right {
+  z-index: -1;
+}
+
+.evenementen__arrow {
+  @extend %container-arrow;
+}
+
+.evenementen__arrow__online {
+  color: $color-mediumred;
+  fill: currentColor;
+  background-color: $color-taupe;
+  opacity: 0;
+}
+
+.evenementen__arrow__echt {
+  color: $color-darkestred;
+  fill: currentColor;
+  background-color: $color-taupe;
+  opacity: 0;
+}
+
+.evenementen__arrow__boekenclub {
+  color: $color-lightred;
+  fill: currentColor;
+  background-color: $color-taupe;
+  opacity: 0;
+}
+
+///////////////////
+// RIGHT COLUMN //
+/////////////////
+
+.evenementen__square {
+  @extend %container-square;
+  opacity: 0;
+
+  &:nth-child(1) {
+    background-color: $color-mediumred;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-darkestred;
+  }
+
+  &:nth-child(3) {
+    background-color: $color-lightred;
+  }
+}
+
+.evenementen__subtitle {
+  @extend %subtitle;
+}

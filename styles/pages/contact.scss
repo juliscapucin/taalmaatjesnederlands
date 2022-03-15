@@ -1,0 +1,73 @@
+.contact {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.contact__container {
+  @extend %main-container-row;
+  flex-wrap: nowrap;
+}
+
+.contact__left,
+.contact__right {
+  width: 50vw;
+  height: 100%;
+  @include media("<phone") {
+    width: 100vw;
+  }
+}
+
+.contact__left {
+  z-index: 1;
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+///////////////////
+// LEFT  COLUMN //
+/////////////////
+
+.contact__arrow {
+  @extend %container-arrow;
+}
+
+.contact__arrow__online {
+  color: $color-mediumred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+.contact__arrow__echt {
+  color: $color-darkestred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+.contact__arrow__boekenclub {
+  color: $color-lightred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+///////////////////
+// RIGHT COLUMN //
+/////////////////
+
+.contact__square {
+  @extend %container-square;
+  opacity: 0;
+
+  &:nth-child(1) {
+    background-color: $color-mediumred;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-darkestred;
+  }
+}
+
+.contact__subtitle {
+  @extend %subtitle;
+}

@@ -1,0 +1,25 @@
+mixin svg-item
+  -
+    var item = attributes['svg-item-name']
+  
+  case item
+    when 'taalmaatjes'
+      include svg/taalmaatjes
+    when 'nederlands'
+      include svg/nederlands
+    when 'evenementen'
+      include svg/evenementen
+    when 'over'
+      include svg/over
+    when 'maatje'
+      include svg/maatje
+    when 'links'
+      include svg/links
+    when 'big-arrow'
+      include svg/big-arrow
+    when 'logo-taalmaatjes'
+      include svg/logo-taalmaatjes
+    when 'logo-nederlands'
+      include svg/logo-nederlands
+
+

@@ -1,0 +1,27 @@
+.preloader {
+  @extend %cover;
+  @extend %flex-center;
+  @extend %flex-vertical;
+  position: absolute;
+  background: $color-taupe;
+  color: $color-black;
+  text-align: center;
+  z-index: z("preloader");
+  // opacity: 0;
+}
+
+.preloader__text {
+  font-size: 0;
+  max-width: 67rem;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  span span {
+    @extend %text-highlight;
+    display: inline-block;
+    transform-origin: center center 0.5em;
+  }
+}

@@ -1,0 +1,35 @@
+extends ../base.pug
+
+block variables
+  - var template = 'links'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .links.links__wrapper
+    include ../partials/navigation
+    .links__container 
+      .links__left
+        .links__arrow
+          .links__arrow__online.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+        .links__arrow
+          .links__arrow__echt.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow') 
+        .links__arrow
+          .links__arrow__boekenclub.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+        .links__arrow
+          .links__arrow__boekenclub.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow')
+
+      .links__right 
+        each item in links.data.items 
+          .links__square
+            .links__subtitle(data-animation='reveal-secondary')
+              h2=item.item_title
+            .links__text.text
+              p!=PrismicDOM.asHTML(item.item_text)
+
+    include ../partials/footer

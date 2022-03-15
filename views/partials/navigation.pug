@@ -1,0 +1,11 @@
+nav.navigation
+  a.logo(href='/')
+    .logo__taalmaatjes
+      +svg-item(svg-item-name='logo-taalmaatjes')
+    .logo__nederlands
+      +svg-item(svg-item-name='logo-nederlands')
+
+  ul.navigation__wrapper
+    each item in navigation.data.nav_bar 
+      li.navigation__item
+        a.navigation__item__link(href=item.link_url class=item.link_name)=item.link_name

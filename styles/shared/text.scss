@@ -1,0 +1,57 @@
+%subtitle {
+  font-size: clamp(4.5rem, $font-size-subtitles, 12rem);
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+%text-list {
+  font-size: $font-size-list;
+  font-weight: 200;
+}
+
+%text-menu {
+  font-size: $font-size-menu;
+  font-weight: 200;
+  line-height: 1;
+}
+
+%text-menu-mobile {
+  font-size: $font-size-menu-mobile;
+  font-weight: 200;
+  line-height: 1;
+}
+
+%text-buttons {
+  font-size: $font-size-buttons;
+  font-weight: 300;
+}
+
+%text-highlight {
+  font-size: $font-size-text-highlight;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+%text-block {
+  font-size: clamp(1.5rem, $font-size-text, 1.8rem);
+  font-weight: 200;
+  line-height: 1.6;
+  letter-spacing: 50;
+  & p:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+%text-lines {
+  display: flex;
+  justify-content: flex-end;
+  font-size: $font-size-subtitles;
+  line-height: 1;
+}
+
+%text-footer {
+  font-size: clamp(1.4rem, $font-size-text, 1.6rem);
+  font-weight: 200;
+  line-height: 1.6;
+}

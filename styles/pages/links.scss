@@ -1,0 +1,84 @@
+.links {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.links__container {
+  @extend %main-container-row;
+  flex-wrap: nowrap;
+}
+
+.links__left,
+.links__right {
+  width: 50vw;
+  height: 100%;
+  @include media("<phone") {
+    width: 100vw;
+  }
+}
+
+.links__left {
+  @include media("<phone") {
+    display: none;
+  }
+}
+
+.links__right {
+  z-index: -1;
+}
+
+///////////////////
+// LEFT  COLUMN //
+/////////////////
+
+.links__arrow {
+  @extend %container-arrow;
+}
+
+.links__arrow__online {
+  color: $color-mediumred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+.links__arrow__echt {
+  color: $color-darkestred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+.links__arrow__boekenclub {
+  color: $color-lightred;
+  fill: currentColor;
+  background-color: $color-taupe;
+}
+
+///////////////////
+// RIGHT COLUMN //
+/////////////////
+
+.links__square {
+  @extend %container-square;
+  opacity: 0;
+
+  &:nth-child(1) {
+    background-color: $color-mediumred;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-darkestred;
+  }
+
+  &:nth-child(3) {
+    background-color: $color-lightred;
+  }
+
+  &:nth-child(4) {
+    background-color: $color-darkred;
+  }
+}
+
+.links__subtitle {
+  @extend %subtitle;
+}

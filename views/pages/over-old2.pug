@@ -1,0 +1,30 @@
+extends ../base.pug
+
+block variables
+  - var template = 'over'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .over.over__wrapper
+    include ../partials/navigation
+    .over__container 
+      
+      .over__first
+        .over__arrow
+          .over__arrow__first.arrow(data-animation='reveal-arrow')
+            +svg-item(svg-item-name='big-arrow') 
+        .over__square
+          .over__highlight.text
+            p!=PrismicDOM.RichText.asHtml(over.data.text_highlight)
+
+      //- .over__second  
+      //-   .over__arrow
+      //-     .over__arrow__second.arrow(data-animation='reveal-arrow')
+      //-       +svg-item(svg-item-name='big-arrow')
+      //-   .over__square
+      //-     .over__text.text(data-animation='reveal-secondary')
+      //-       p!=PrismicDOM.RichText.asHtml(over.data.text_highlight)
+
+    include ../partials/footer

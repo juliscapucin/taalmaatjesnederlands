@@ -1,0 +1,78 @@
+extends ../base.pug
+
+block variables
+  - var template = 'home'
+
+include ../svg-items/svg-items
+
+block content
+  include ../partials/toggle-navigation
+  .home.home__wrapper
+    .home__header
+      .home__text__highlight
+        p!=PrismicDOM.asText(home.data.header)
+      include ../partials/navigation-home
+    .home__container
+
+      //-- LOGO --//
+      header.home__logo
+        .home__big__logo 
+          .home__big__logo__taalmaatjes.logo__top
+            .home__taalmaatjes 
+              +svg-item(svg-item-name='taalmaatjes')
+          .home__big__logo__nederlands.logo__bottom
+            .home__nederlands
+              +svg-item(svg-item-name='nederlands')
+        .home__text__highlight__mobile
+          p!=PrismicDOM.asText(home.data.header)
+
+      main
+        //-- EVENEMENTEN --//
+        .home__evenementen
+          a.home__evenementen__title.title(href='/evenementen' data-animation='reveal-home')
+            +svg-item(svg-item-name='evenementen')
+          a.home__evenementen__text.text(href='/evenementen')
+            p!=PrismicDOM.asText(home.data.evenementen)
+          .home__evenementen__bg.bg
+          .arrow
+
+        //-- OVER ONS --//
+        .home__over
+          .home__over__square__left
+            a.home__over__title.title(href='/over' data-animation='reveal-home')
+              +svg-item(svg-item-name='over')
+            a.home__over__text.text(href='/over')
+              p!=PrismicDOM.asText(home.data.over)
+          .home__over__square__right.arrow
+            .home__arrow
+              +svg-item(svg-item-name='big-arrow')
+          .home__over__bg.bg
+
+        //-- MAATJE --//
+        .home__maatje 
+          .home__maatje__square__left.arrow
+            .home__arrow
+              +svg-item(svg-item-name='big-arrow')
+          .home__maatje__square__right
+            a.home__maatje__title.title(href='/contact' data-animation='reveal-home')
+              +svg-item(svg-item-name='maatje')
+            a.home__maatje__text.text(href='/contact')
+              p!=PrismicDOM.asText(home.data.maatje)
+          .home__maatje__bg.bg
+
+        //-- LINKS --//
+        .home__links
+          .home__links__square__left
+            a.home__links__title.title(href='/links' data-animation='reveal-home')
+              +svg-item(svg-item-name='links')
+            a.home__links__text.text(href='/links')
+              p!=PrismicDOM.asText(home.data.links)
+          .home__links__square__right.arrow
+            .home__arrow
+              +svg-item(svg-item-name='big-arrow')
+          .home__links__bg.bg
+
+      include ../partials/footer
+  
+      
+      
